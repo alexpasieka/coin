@@ -8,58 +8,49 @@
 
 import UIKit
 
-class PastMonthReportVC: UIViewController {
+class PastMonthReportVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-//    let simpleCell = "simpleCell"
-//    enum MySection: Int {
-//        case title = 0, description, viewOnWeb
-//    }
-    
-    
-    var month: Month?
+    var month: Month!
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var budgetResultLabel: UILabel!
     @IBOutlet weak var categoryList: UITableView!
     
-    var moneySpent : Float = 0.0
+    var moneySpent : Float = 0.00
+    var moneyLeftToSpend : Float = 0.00
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for c in month!.report {
-            moneySpent += c.moneySpent
+        monthLabel.text = month.name
+        
+        for c in month.report {
+            moneyLeftToSpend += c.moneyLeftToSpend
         }
         
-        print(moneySpent)
+        budgetResultLabel.text = String(moneyLeftToSpend)
+        
+        // load category list data
+        categoryList.dataSource = self
+        categoryList.delegate = self
     }
     
+    // MARK: - Table View
     
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: simpleCell, for: indexPath)
-//
-//        // Configure the cell...
-//        if indexPath.section == MySection.title.rawValue{
-//            cell.textLabel?.text = bookmark?.name
-//            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 24.0)
-//        }
-//
-//        // Configure the cell...
-//        if indexPath.section == MySection.description.rawValue{
-//            cell.textLabel?.numberOfLines = 0
-//            cell.textLabel?.text = "We could add a description of the link here, tags, etc ..."
-//            cell.textLabel?.font = UIFont.systemFont(ofSize: 18.0)
-//        }
-//
-//        if indexPath.section == MySection.viewOnWeb.rawValue{
-//            cell.textLabel?.text = "View on web"
-//            cell.textLabel?.font = UIFont.systemFont(ofSize: 18.0)
-//            cell.textLabel?.textColor = view.tintColor // clickable blue
-//            cell.textLabel?.textAlignment = NSTextAlignment.center
-//        }
-//
-//
-//        return cell
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return month.report.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "categoryCell")
+        let category = MyAppData.shared.categories[indexPath.row]
+        cell.textLabel?.text = category.name
+        cell.detailTextLabel?.text = String(format: "$%.2f / $%.2f Spent", category.moneySpent, category.maxAmount)
+        return cell
+    }
     
 }

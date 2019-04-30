@@ -43,7 +43,7 @@
                             <barButtonItem systemItem="edit" id="Isa-5b-tZ5"/>
                             <barButtonItem systemItem="add" id="kHB-Dn-8W3">
                                 <connections>
-                                    <segue destination="rYM-wa-FK0" kind="presentation" id="37b-w7-Im7"/>
+                                    <segue destination="o32-X6-FKS" kind="show" id="twG-3w-qF2"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -104,11 +104,6 @@
                         <viewLayoutGuide key="safeArea" id="is2-rN-BAp"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Category" id="Bsh-1E-pwq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GUz-7X-hcM">
-                            <connections>
-                                <segue destination="md4-eE-fjp" kind="presentation" id="9DP-7F-UmI"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yzt-Bs-qs6">
                             <connections>
                                 <segue destination="Bmd-nl-evK" kind="unwind" unwindAction="unwindWithDoneTappedWithSegue:" id="nv3-y1-n30"/>
@@ -213,7 +208,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change Budget" id="WcE-i3-XDc">
                             <connections>
-                                <segue destination="md4-eE-fjp" kind="presentation" id="IDY-Df-i22"/>
+                                <segue destination="EGp-jc-isv" kind="show" id="mu3-C1-iOu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -340,7 +335,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTe-9U-Zjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954.4000000000001" y="872.11394302848578"/>
+            <point key="canvasLocation" x="1076" y="871"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xM4-HV-VHO">
@@ -381,6 +376,7 @@
         <!--Navigation Controller-->
         <scene sceneID="TOs-Qr-rG3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPn-qd-fCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="md4-eE-fjp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HyD-aE-TxU">
@@ -392,7 +388,6 @@
                         <segue destination="EGp-jc-isv" kind="relationship" relationship="rootViewController" id="RKD-yZ-VZA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPn-qd-fCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074" y="-651"/>
         </scene>
@@ -461,30 +456,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N61-83-7GJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4831.1999999999998" y="871.21439280359823"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eHd-gm-uBN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cmc-BD-0Mq" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="22L-vL-7Y7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6eM-rN-bwg" kind="relationship" relationship="rootViewController" id="TPx-zb-amX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gW-tn-GeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3892" y="871.21439280359823"/>
+            <point key="canvasLocation" x="2014" y="870"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ALg-aK-D7U"/>
-        <segue reference="IDY-Df-i22"/>
-        <segue reference="FlL-Lq-akD"/>
+        <segue reference="JH9-0h-TVN"/>
+        <segue reference="twG-3w-qF2"/>
+        <segue reference="mu3-C1-iOu"/>
     </inferredMetricsTieBreakers>
 </document>

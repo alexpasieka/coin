@@ -33,7 +33,6 @@ class PastMonthsVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("trying")
         if let indexPath = tableView.indexPathForSelectedRow{
             let selectedRow = indexPath.row
             guard selectedRow < MyAppData.shared.pastMonths.count else{

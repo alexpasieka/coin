@@ -32,7 +32,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             var allMonths = MyAppData.shared.pastMonths
             allMonths.append(Month(name: formatter.string(from: MyAppData.shared.lastActivityDate), report: MyAppData.shared.categories))
             MyAppData.shared.pastMonths = allMonths
-            MyAppData.shared.categories = [Category]()
+            //MyAppData.shared.categories = [Category]()
         }
         
         // display current month
@@ -96,6 +96,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     MyAppData.shared.categories.append(c)
                     
                     viewDidLoad()
+                    print("hello")
                 }
             }
         }
