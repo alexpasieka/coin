@@ -12,16 +12,16 @@ class MyAppData {
     
     static let shared = MyAppData()
     
-    let lastActivityDateKey : String = "lastActivityDateKey"
-    var lastActivityDate : Date = Date() {
+    let lastActivityDateKey: String = "lastActivityDateKey"
+    var lastActivityDate: Date = Date() {
         didSet {
             let defaults = UserDefaults.standard
             defaults.set(lastActivityDate, forKey: lastActivityDateKey)
         }
     }
     
-    let categoriesKey : String = "categoriesKey"
-    var categories : [Category] = [Category]() {
+    let categoriesKey: String = "categoriesKey"
+    var categories: [Category] = [Category]() {
         didSet {
             categories = categories.sorted(by: { $0.name < $1.name })
             let defaults = UserDefaults.standard
@@ -29,8 +29,8 @@ class MyAppData {
         }
     }
     
-    let pastMonthsKey : String = "pastMonthsKey"
-    var pastMonths : [Month] = [Month]() {
+    let pastMonthsKey: String = "pastMonthsKey"
+    var pastMonths: [Month] = [Month]() {
         didSet {
             let defaults = UserDefaults.standard
             try! defaults.set(JSONEncoder().encode(pastMonths), forKey: pastMonthsKey)

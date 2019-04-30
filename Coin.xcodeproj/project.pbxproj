@@ -19,19 +19,8 @@
 		FAD8D80922692BD300EF6861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD8D80722692BD300EF6861 /* Main.storyboard */; };
 		FAD8D80B22692BD400EF6861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD8D80A22692BD400EF6861 /* Assets.xcassets */; };
 		FAD8D80E22692BD400EF6861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD8D80C22692BD400EF6861 /* LaunchScreen.storyboard */; };
-		FAD8D81922692BD500EF6861 /* CoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8D81822692BD500EF6861 /* CoinTests.swift */; };
 		FAEA6E6F227006660065CE68 /* MyAppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA6E6E227006660065CE68 /* MyAppData.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FAD8D81522692BD500EF6861 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAD8D7F822692BD300EF6861 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAD8D7FF22692BD300EF6861;
-			remoteInfo = Coin;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAAE6FC52277E5A0002FB09D /* Months.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
@@ -48,21 +37,11 @@
 		FAD8D80A22692BD400EF6861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD8D80D22692BD400EF6861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD8D80F22692BD400EF6861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAD8D81422692BD500EF6861 /* CoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAD8D81822692BD500EF6861 /* CoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTests.swift; sourceTree = "<group>"; };
-		FAD8D81A22692BD500EF6861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEA6E6E227006660065CE68 /* MyAppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FAD8D7FD22692BD300EF6861 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAD8D81122692BD500EF6861 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +65,6 @@
 			children = (
 				FAEA6E6E227006660065CE68 /* MyAppData.swift */,
 				FAD8D80222692BD300EF6861 /* Coin */,
-				FAD8D81722692BD500EF6861 /* CoinTests */,
 				FAD8D80122692BD300EF6861 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD8D80022692BD300EF6861 /* Coin.app */,
-				FAD8D81422692BD500EF6861 /* CoinTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,15 +89,6 @@
 				FAD8D80F22692BD400EF6861 /* Info.plist */,
 			);
 			path = Coin;
-			sourceTree = "<group>";
-		};
-		FAD8D81722692BD500EF6861 /* CoinTests */ = {
-			isa = PBXGroup;
-			children = (
-				FAD8D81822692BD500EF6861 /* CoinTests.swift */,
-				FAD8D81A22692BD500EF6861 /* Info.plist */,
-			);
-			path = CoinTests;
 			sourceTree = "<group>";
 		};
 		FAD8D82322692D8900EF6861 /* VC */ = {
@@ -156,24 +124,6 @@
 			productReference = FAD8D80022692BD300EF6861 /* Coin.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FAD8D81322692BD500EF6861 /* CoinTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FAD8D82022692BD500EF6861 /* Build configuration list for PBXNativeTarget "CoinTests" */;
-			buildPhases = (
-				FAD8D81022692BD500EF6861 /* Sources */,
-				FAD8D81122692BD500EF6861 /* Frameworks */,
-				FAD8D81222692BD500EF6861 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FAD8D81622692BD500EF6861 /* PBXTargetDependency */,
-			);
-			name = CoinTests;
-			productName = CoinTests;
-			productReference = FAD8D81422692BD500EF6861 /* CoinTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -186,10 +136,6 @@
 				TargetAttributes = {
 					FAD8D7FF22692BD300EF6861 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					FAD8D81322692BD500EF6861 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = FAD8D7FF22692BD300EF6861;
 					};
 				};
 			};
@@ -207,7 +153,6 @@
 			projectRoot = "";
 			targets = (
 				FAD8D7FF22692BD300EF6861 /* Coin */,
-				FAD8D81322692BD500EF6861 /* CoinTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,13 +165,6 @@
 				FAD8D80E22692BD400EF6861 /* LaunchScreen.storyboard in Resources */,
 				FAD8D80B22692BD400EF6861 /* Assets.xcassets in Resources */,
 				FAD8D80922692BD300EF6861 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAD8D81222692BD500EF6861 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,23 +188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAD8D81022692BD500EF6861 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAD8D81922692BD500EF6861 /* CoinTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAD8D81622692BD500EF6861 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAD8D7FF22692BD300EF6861 /* Coin */;
-			targetProxy = FAD8D81522692BD500EF6861 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAD8D80722692BD300EF6861 /* Main.storyboard */ = {
@@ -440,48 +362,6 @@
 			};
 			name = Release;
 		};
-		FAD8D82122692BD500EF6861 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7N5X2YPT2;
-				INFOPLIST_FILE = CoinTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexpasieka.CoinTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coin.app/Coin";
-			};
-			name = Debug;
-		};
-		FAD8D82222692BD500EF6861 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B7N5X2YPT2;
-				INFOPLIST_FILE = CoinTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexpasieka.CoinTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coin.app/Coin";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,15 +379,6 @@
 			buildConfigurations = (
 				FAD8D81E22692BD500EF6861 /* Debug */,
 				FAD8D81F22692BD500EF6861 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FAD8D82022692BD500EF6861 /* Build configuration list for PBXNativeTarget "CoinTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FAD8D82122692BD500EF6861 /* Debug */,
-				FAD8D82222692BD500EF6861 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

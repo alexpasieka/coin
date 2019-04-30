@@ -8,22 +8,23 @@
 
 import UIKit
 
+// custom main view controller class
 class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    // ivars
-    var moneyLeftToSpend : Float = 0.00
-    var moneySpent : Float = 0.00
-    
     // storyboard references
-    @IBOutlet weak var currentMonthLabel : UILabel!
+    @IBOutlet weak var currentMonthLabel: UILabel!
     @IBOutlet weak var moneyLeftToSpendLabel: UILabel!
     @IBOutlet weak var moneySpentLabel: UILabel!
     @IBOutlet weak var categoryList: UITableView!
     
+    // ivars
+    var moneyLeftToSpend: Float = 0.00
+    var moneySpent: Float = 0.00
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // reset budget if month has changed
+        // reset budget if month has changed - todo - don't reset the budget, just the money
         let formatter = DateFormatter()
         formatter.dateFormat = "ss"
         let lastMonthNumber = Int(formatter.string(from: MyAppData.shared.lastActivityDate))
@@ -37,8 +38,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // display current month
         formatter.dateFormat = "MMMM"
-        let currentMonthString = formatter.string(from: MyAppData.shared.lastActivityDate)
-        currentMonthLabel.text = currentMonthString
+        currentMonthLabel.text = formatter.string(from: Date())
         
         // calculate money left to spend
         moneyLeftToSpend = 0.00
@@ -76,16 +76,19 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // initialize cell (using detailed cell style)
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "categoryCell")
+        // for each current budget category
         let category = MyAppData.shared.categories[indexPath.row]
         cell.textLabel?.text = category.name
         cell.detailTextLabel?.text = String(format: "$%.2f / $%.2f Spent", category.moneySpent, category.maxAmount)
+        
         return cell
     }
     
-    // MARK: - Unwind Segues
+    // MARK: - Navigation
     
-    // Done Input Spending
+    // done input spending segue todo
     @IBAction func unwindWithDoneTapped(segue: UIStoryboardSegue) {
         if let inputSpendingVC = segue.source as? InputSpendingVC {
             if let amount = inputSpendingVC.amount, let category = inputSpendingVC.category {
@@ -96,7 +99,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     MyAppData.shared.categories.append(c)
                     
                     viewDidLoad()
-                    print("hello")
                 }
             }
         }

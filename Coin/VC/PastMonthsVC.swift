@@ -36,6 +36,8 @@ class PastMonthsVC: UITableViewController {
         return cell
     }
     
+    // MARK: - Navigation
+    
     // past month budget report segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow {

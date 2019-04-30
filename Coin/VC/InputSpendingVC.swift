@@ -8,17 +8,21 @@
 
 import UIKit
 
+// custom input spending view controller class
 class InputSpendingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    var amount : Float?
-    var category : String?
     
-    @IBOutlet weak var amountField : UITextField!
+    // storyboard references
+    @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var categoryField: UITableView!
+    
+    // ivars
+    var amount: Float?
+    var category: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // load category list data
         categoryField.dataSource = self
         categoryField.delegate = self
     }
@@ -34,25 +38,26 @@ class InputSpendingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // intialize cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+        // for each current budget category
         let category = MyAppData.shared.categories[indexPath.row]
         cell.textLabel?.text = category.name
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //getting the index path of selected row
-        let indexPath = tableView.indexPathForSelectedRow
-        
-        //getting the current cell from the index path
-        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
-        
-        //getting the text of that cell
-        category = currentCell.textLabel!.text
+        if let indexPath = tableView.indexPathForSelectedRow {
+            // return the selected category cell
+            let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+            category = currentCell.textLabel!.text
+        }
     }
     
     // MARK: - Navigation
     
+    // done input spending amount (and category) segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         amount = (amountField.text?.count)! > 0 ? Float(amountField.text!) : nil
     }
