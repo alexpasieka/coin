@@ -32,6 +32,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if lastMonthNumber! != currentMonthNumber! {
             // add last month budget data to past months data
             var allMonths = MyAppData.shared.pastMonths
+            formatter.dateFormat = "MMMM yyyy"
             allMonths.append(Month(name: formatter.string(from: MyAppData.shared.lastActivityDate), report: MyAppData.shared.categories))
             MyAppData.shared.pastMonths = allMonths
             

@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red92\green38\blue153;
+\red196\green26\blue22;}
+{\*\expandedcolortbl;;\csgenericrgb\c0\c0\c0;\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c35922\c14825\c60191;
+\csgenericrgb\c77000\c10200\c8600;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Alex Pasieka\
+Coin - Personal Finance Tracker\
+\
+Application Definition Statement: Coin is for anyone that wants to track how much money they spend and in which categories of life they spend it, and then budget their money based on that.\
+\
+Users of Coin are able to create categories with maximum amounts for their monthly budget and input spendings for those categories. Coin will show how much of each category the user has spent so far and an overall display of money spent and money left for the budget as a whole. The app will even indicate if the user has gone over their budget by changing colors and displaying negative money left to spend. The part that I feel went a little above and beyond on is how the app saves past month budgets and how the user did that month with that budget. This way, as stated by my application definition statement, users can get a better judgement of how to adjust their monthly budget if they find themselves spending too much, and in what categories of life. With all of those things combined, I would definitely say that I met my original application definition statement.\
+\
+My main struggle with the project was how I was going to save the past months\'92 data within user defaults. For a while, I was simply going about it the wrong way. I spent hours trying to store the months as 2D arrays (an array of budget category arrays). This led me to find a lot of confusing things on the internet that didn\'92t really help at all. It wasn\'92t until I stepped away from the project for a bit that I realized I could just create another custom class with a property of an array of budget categories, and then store an array of that custom class.\
+\
+App Icon Credit: https://png.pngtree.com/svg/20161028/244da96d9e.png\
+\
+My Grade: 95%\
+I really spent a long time getting every part of this project to work perfectly and polish all of its functionality. With that said, the overall aesthetic is a very basic iOS app, which isn\'92t to say that I didn\'92t put a lot of thought into the UI, but it could\'92ve been better. Plus, there were a few features that I wanted to add that I didn\'92t get to, which makes the app feel slightly lacking. But, overall, I feel that with the time and effort that I put in to make it as functional as I could make it, I think this project deserves an A.\
+\
+P.S. I know that testing the ability to save past months\'92 data would be impossible unless you waited a month. Within my MainVC file, if you just change this line:\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 formatter.\cf4 dateFormat\cf2  = \cf5 "M"
+\f0 \cf0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 to this:\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 formatter.\cf4 dateFormat\cf2  = \cf5 \'93mm\'94
+\f0 \cf0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 It will change every minute rather than every month.}
