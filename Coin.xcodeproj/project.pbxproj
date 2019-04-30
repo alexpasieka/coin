@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAAE6FC62277E5A0002FB09D /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE6FC52277E5A0002FB09D /* Months.swift */; };
+		FAAE6FC82277E85B002FB09D /* PastMonthsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE6FC72277E85B002FB09D /* PastMonthsVC.swift */; };
+		FAAE6FCA2277EC72002FB09D /* PastMonthReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAE6FC92277EC72002FB09D /* PastMonthReportVC.swift */; };
 		FACAE189226E5E4F00C07A94 /* InputSpendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAE188226E5E4F00C07A94 /* InputSpendingVC.swift */; };
 		FACAE18D226E885500C07A94 /* ChangeBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAE18C226E885500C07A94 /* ChangeBudgetVC.swift */; };
 		FACAE18F226E88FA00C07A94 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACAE18E226E88FA00C07A94 /* Categories.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FAAE6FC52277E5A0002FB09D /* Months.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
+		FAAE6FC72277E85B002FB09D /* PastMonthsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastMonthsVC.swift; sourceTree = "<group>"; };
+		FAAE6FC92277EC72002FB09D /* PastMonthReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastMonthReportVC.swift; sourceTree = "<group>"; };
 		FACAE188226E5E4F00C07A94 /* InputSpendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSpendingVC.swift; sourceTree = "<group>"; };
 		FACAE18C226E885500C07A94 /* ChangeBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBudgetVC.swift; sourceTree = "<group>"; };
 		FACAE18E226E88FA00C07A94 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FACAE18E226E88FA00C07A94 /* Categories.swift */,
+				FAAE6FC52277E5A0002FB09D /* Months.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +130,8 @@
 				FACAE18C226E885500C07A94 /* ChangeBudgetVC.swift */,
 				FACAE193226E9CDD00C07A94 /* NewCategoryVC.swift */,
 				FACAE188226E5E4F00C07A94 /* InputSpendingVC.swift */,
+				FAAE6FC72277E85B002FB09D /* PastMonthsVC.swift */,
+				FAAE6FC92277EC72002FB09D /* PastMonthReportVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -228,7 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAE6FC62277E5A0002FB09D /* Months.swift in Sources */,
+				FAAE6FC82277E85B002FB09D /* PastMonthsVC.swift in Sources */,
 				FAEA6E6F227006660065CE68 /* MyAppData.swift in Sources */,
+				FAAE6FCA2277EC72002FB09D /* PastMonthReportVC.swift in Sources */,
 				FAD8D80622692BD300EF6861 /* MainVC.swift in Sources */,
 				FACAE194226E9CDD00C07A94 /* NewCategoryVC.swift in Sources */,
 				FACAE18D226E885500C07A94 /* ChangeBudgetVC.swift in Sources */,

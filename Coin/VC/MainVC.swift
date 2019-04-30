@@ -25,10 +25,13 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         // reset budget if month has changed
         let formatter = DateFormatter()
-        formatter.dateFormat = "M"
+        formatter.dateFormat = "ss"
         let lastMonthNumber = Int(formatter.string(from: MyAppData.shared.lastActivityDate))
         let currentMonthNumber = Int(formatter.string(from: Date()))
-        if lastMonthNumber! < currentMonthNumber! || lastMonthNumber == 12 {
+        if lastMonthNumber! != currentMonthNumber! {
+            var allMonths = MyAppData.shared.pastMonths
+            allMonths.append(Month(name: formatter.string(from: MyAppData.shared.lastActivityDate), report: MyAppData.shared.categories))
+            MyAppData.shared.pastMonths = allMonths
             MyAppData.shared.categories = [Category]()
         }
         
@@ -76,19 +79,21 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "categoryCell")
         let category = MyAppData.shared.categories[indexPath.row]
         cell.textLabel?.text = category.name
-        let percentage = ((category.moneySpent / category.maxAmount) * 100).isNaN ? 0 : (category.moneySpent / category.maxAmount) * 100
-        cell.detailTextLabel?.text = String(format: "%2.f%% Spent", percentage)
+        cell.detailTextLabel?.text = String(format: "$%.2f / $%.2f Spent", category.moneySpent, category.maxAmount)
         return cell
     }
     
     // MARK: - Unwind Segues
     
+    // Done Input Spending
     @IBAction func unwindWithDoneTapped(segue: UIStoryboardSegue) {
         if let inputSpendingVC = segue.source as? InputSpendingVC {
             if let amount = inputSpendingVC.amount, let category = inputSpendingVC.category {
                 if let c = MyAppData.shared.categories.first(where: { $0.name == category }) {
+                    MyAppData.shared.categories = MyAppData.shared.categories.filter { $0.name != c.name }
                     c.moneyLeftToSpend -= amount
                     c.moneySpent += amount
+                    MyAppData.shared.categories.append(c)
                     
                     viewDidLoad()
                 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Category {
+class Category : Codable {
     
     var name : String
     var maxAmount : Float

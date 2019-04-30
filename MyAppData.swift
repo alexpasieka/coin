@@ -23,8 +23,17 @@ class MyAppData {
     let categoriesKey : String = "categoriesKey"
     var categories : [Category] = [Category]() {
         didSet {
+            categories = categories.sorted(by: { $0.name < $1.name })
             let defaults = UserDefaults.standard
-            defaults.set(categories, forKey: categoriesKey)
+            try! defaults.set(JSONEncoder().encode(categories), forKey: categoriesKey)
+        }
+    }
+    
+    let pastMonthsKey : String = "pastMonthsKey"
+    var pastMonths : [Month] = [Month]() {
+        didSet {
+            let defaults = UserDefaults.standard
+            try! defaults.set(JSONEncoder().encode(pastMonths), forKey: pastMonthsKey)
         }
     }
     
@@ -43,10 +52,23 @@ class MyAppData {
         }
         
         if let s = defaults.object(forKey: categoriesKey) {
-            categories = s as! [Category]
+            guard let encodedData = defaults.object(forKey: categoriesKey) as? Data else {
+                return
+            }
+            categories = try! JSONDecoder().decode([Category].self, from: encodedData)
         }
         else {
             categories = [Category]()
+        }
+        
+        if let s = defaults.object(forKey: pastMonthsKey) {
+            guard let encodedData = defaults.object(forKey: pastMonthsKey) as? Data else {
+                return
+            }
+            pastMonths = try! JSONDecoder().decode([Month].self, from: encodedData)
+        }
+        else {
+            pastMonths = [Month]()
         }
     }
     

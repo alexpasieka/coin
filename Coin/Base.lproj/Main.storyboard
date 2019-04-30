@@ -104,7 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="is2-rN-BAp"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Category" id="Bsh-1E-pwq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GUz-7X-hcM"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="GUz-7X-hcM">
+                            <connections>
+                                <segue destination="md4-eE-fjp" kind="presentation" id="9DP-7F-UmI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Yzt-Bs-qs6">
                             <connections>
                                 <segue destination="Bmd-nl-evK" kind="unwind" unwindAction="unwindWithDoneTappedWithSegue:" id="nv3-y1-n30"/>
@@ -204,7 +208,7 @@
                     <navigationItem key="navigationItem" title="Coin" id="1Xr-oH-SJu">
                         <barButtonItem key="leftBarButtonItem" title="Past Months" id="dFk-RS-3VN">
                             <connections>
-                                <segue destination="oED-VP-RRM" kind="presentation" id="ZPG-CB-YRe"/>
+                                <segue destination="xHy-o5-O9E" kind="show" id="pFR-5v-84a"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Change Budget" id="WcE-i3-XDc">
@@ -287,7 +291,7 @@
                     <navigationItem key="navigationItem" id="QV0-tQ-tXR">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8Q5-Yn-GH1">
                             <connections>
-                                <segue destination="uTO-5I-eLN" kind="presentation" id="lWc-qb-Llx"/>
+                                <segue destination="uTO-5I-eLN" kind="presentation" id="FlL-Lq-akD"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="DWD-Yl-zUN">
@@ -309,19 +313,22 @@
         <!--Past Months-->
         <scene sceneID="hZZ-fo-SRP">
             <objects>
-                <tableViewController id="xHy-o5-O9E" sceneMemberID="viewController">
+                <tableViewController id="xHy-o5-O9E" customClass="PastMonthsVC" customModule="Coin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xF0-bw-MhY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XzS-Vd-eVk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="XzS-Vd-eVk">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XzS-Vd-eVk" id="aCa-l9-8Vc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6eM-rN-bwg" kind="show" id="ALg-aK-D7U"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -329,17 +336,11 @@
                             <outlet property="delegate" destination="xHy-o5-O9E" id="Ta8-Dc-0Ab"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Past Months" id="TZF-Oi-26g">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="2d8-L0-ddk">
-                            <connections>
-                                <segue destination="uTO-5I-eLN" kind="presentation" id="qed-z3-a5X"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Past Months" id="TZF-Oi-26g"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTe-9U-Zjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015.2" y="872.11394302848578"/>
+            <point key="canvasLocation" x="2954.4000000000001" y="872.11394302848578"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xM4-HV-VHO">
@@ -358,24 +359,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPY-N2-m44" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="105.69715142428787"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ddo-Eh-HZ7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oED-VP-RRM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GmY-0m-Bh3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xHy-o5-O9E" kind="relationship" relationship="rootViewController" id="quD-yw-bcQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fx5-As-Q11" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1076" y="871.21439280359823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dbh-Cl-ZP9">
@@ -431,8 +414,77 @@
             </objects>
             <point key="canvasLocation" x="2952.8000000000002" y="-652.62368815592208"/>
         </scene>
+        <!--Past Month ReportVC-->
+        <scene sceneID="rJB-PA-LcB">
+            <objects>
+                <viewController id="6eM-rN-bwg" customClass="PastMonthReportVC" customModule="Coin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jnE-9I-h2q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Under/Over Budget" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n00-F4-Ccf">
+                                <rect key="frame" x="210.5" y="133" width="148.5" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2h-AP-TU5">
+                                <rect key="frame" x="210.5" y="86" width="148.5" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pEh-MI-9bT">
+                                <rect key="frame" x="16" y="178" width="343" height="469"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1WN-4M-j8m">
+                                <rect key="frame" x="16" y="64" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Ptv-JK-y05"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y0Z-4J-chk"/>
+                    <connections>
+                        <outlet property="budgetResultLabel" destination="i2h-AP-TU5" id="p5H-Eh-wrX"/>
+                        <outlet property="categoryList" destination="pEh-MI-9bT" id="bEe-HI-HNI"/>
+                        <outlet property="monthLabel" destination="1WN-4M-j8m" id="JI9-FS-DO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N61-83-7GJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4831.1999999999998" y="871.21439280359823"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eHd-gm-uBN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cmc-BD-0Mq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="22L-vL-7Y7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6eM-rN-bwg" kind="relationship" relationship="rootViewController" id="TPx-zb-amX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gW-tn-GeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3892" y="871.21439280359823"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JH9-0h-TVN"/>
+        <segue reference="ALg-aK-D7U"/>
+        <segue reference="IDY-Df-i22"/>
+        <segue reference="FlL-Lq-akD"/>
     </inferredMetricsTieBreakers>
 </document>
