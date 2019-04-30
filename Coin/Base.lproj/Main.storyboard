@@ -137,7 +137,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIl-Fp-tU2">
                                 <rect key="frame" x="16" y="130" width="343" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.57427823600000005" blue="0.071130130819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICK-t8-Aui">
@@ -423,6 +423,7 @@
                     <navigationItem key="navigationItem" id="Y0Z-4J-chk"/>
                     <connections>
                         <outlet property="budgetResultLabel" destination="i2h-AP-TU5" id="p5H-Eh-wrX"/>
+                        <outlet property="budgetResultLabel2" destination="n00-F4-Ccf" id="irt-M6-Oai"/>
                         <outlet property="categoryList" destination="pEh-MI-9bT" id="bEe-HI-HNI"/>
                         <outlet property="navigationBar" destination="Y0Z-4J-chk" id="vXN-S7-dRv"/>
                     </connections>

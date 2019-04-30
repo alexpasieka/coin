@@ -8,11 +8,13 @@
 
 import UIKit
 
+// custom past month list table view controller class
 class PastMonthsVC: UITableViewController {
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        tableView.reloadData()
-//    }
+    // TODO - is this necessary?
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     // MARK: - Table View Data Source
     
@@ -25,22 +27,21 @@ class PastMonthsVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "categoryCell")
+        // initialize cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+        // for each past month
         let month = MyAppData.shared.pastMonths[indexPath.row]
         cell.textLabel?.text = month.name
+        
         return cell
     }
     
+    // past month budget report segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = tableView.indexPathForSelectedRow{
-            let selectedRow = indexPath.row
-            guard selectedRow < MyAppData.shared.pastMonths.count else{
-                print("none")
-                return
-            }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            // setup for report segue
             let reportVC = segue.destination as! PastMonthReportVC
-            reportVC.month = MyAppData.shared.pastMonths[selectedRow]
+            reportVC.month = MyAppData.shared.pastMonths[indexPath.row]
         }
     }
 

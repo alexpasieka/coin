@@ -6,15 +6,16 @@
 //  Copyright © 2019 Alex Pasieka. All rights reserved.
 //
 
-import Foundation
-
+// custom budget category class
 class Category : Codable {
     
-    var name : String
-    var maxAmount : Float
-    var moneyLeftToSpend : Float
-    var moneySpent : Float
+    // properties
+    var name: String
+    var maxAmount: Float
+    var moneyLeftToSpend: Float
+    var moneySpent: Float
     
+    // designated initializer
     init(name: String, maxAmount: Float, moneyLeftToSpend: Float, moneySpent: Float) {
         self.name = name
         self.maxAmount = maxAmount

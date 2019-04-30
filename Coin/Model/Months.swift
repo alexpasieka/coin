@@ -6,13 +6,14 @@
 //  Copyright © 2019 Alex Pasieka. All rights reserved.
 //
 
-import Foundation
-
+// custom budget month class
 class Month : Codable {
     
-    var name : String
-    var report : [Category]
+    // properties
+    var name: String
+    var report: [Category]
     
+    // designated initializer
     init(name: String, report: [Category]) {
         self.name = name
         self.report = report
