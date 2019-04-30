@@ -24,16 +24,19 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // reset budget if month has changed - todo - don't reset the budget, just the money
+        // reset budget if month has changed
         let formatter = DateFormatter()
-        formatter.dateFormat = "ss"
+        formatter.dateFormat = "M"
         let lastMonthNumber = Int(formatter.string(from: MyAppData.shared.lastActivityDate))
         let currentMonthNumber = Int(formatter.string(from: Date()))
         if lastMonthNumber! != currentMonthNumber! {
+            // add last month budget data to past months data
             var allMonths = MyAppData.shared.pastMonths
             allMonths.append(Month(name: formatter.string(from: MyAppData.shared.lastActivityDate), report: MyAppData.shared.categories))
             MyAppData.shared.pastMonths = allMonths
-            //MyAppData.shared.categories = [Category]()
+            
+            // reset budget
+            MyAppData.shared.categories = [Category]()
         }
         
         // display current month
@@ -94,16 +97,25 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Navigation
     
-    // done input spending segue todo
+    // done input spending segue
     @IBAction func unwindWithDoneTapped(segue: UIStoryboardSegue) {
+        // initialize segue source
         if let inputSpendingVC = segue.source as? InputSpendingVC {
+            // if both fields were filled out
             if let amount = inputSpendingVC.amount, let category = inputSpendingVC.category {
+                // find category
                 if let c = MyAppData.shared.categories.first(where: { $0.name == category }) {
+                    // remove category
                     MyAppData.shared.categories = MyAppData.shared.categories.filter { $0.name != c.name }
+                    
+                    // update category
                     c.moneyLeftToSpend -= amount
                     c.moneySpent += amount
+                    
+                    // re-append category
                     MyAppData.shared.categories.append(c)
                     
+                    // reload main view
                     viewDidLoad()
                 }
             }
