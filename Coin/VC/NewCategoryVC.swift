@@ -19,11 +19,6 @@ class NewCategoryVC: UIViewController {
     var name: String?
     var maxAmount: Float?
     
-    // todo - is this necessary
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - Navigation
 
     // create new budget category segue

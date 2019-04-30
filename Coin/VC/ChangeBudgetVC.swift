@@ -13,11 +13,9 @@ class ChangeBudgetVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // initialize edit button
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    // todo - is this necessary?
+    // reload data after new category is created
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }

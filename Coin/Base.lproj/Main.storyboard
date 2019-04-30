@@ -39,14 +39,11 @@
                                 <segue destination="uTO-5I-eLN" kind="presentation" id="JH9-0h-TVN"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="edit" id="Isa-5b-tZ5"/>
-                            <barButtonItem systemItem="add" id="kHB-Dn-8W3">
-                                <connections>
-                                    <segue destination="o32-X6-FKS" kind="show" id="twG-3w-qF2"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kHB-Dn-8W3">
+                            <connections>
+                                <segue destination="o32-X6-FKS" kind="show" id="twG-3w-qF2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I25-E1-qwS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,7 +362,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Dbh-Cl-ZP9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pHN-9s-Ft4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9o9-Rw-rs8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SGu-Br-rgw">
@@ -377,6 +373,7 @@
                         <segue destination="Fvf-GZ-r5f" kind="relationship" relationship="rootViewController" id="4Sd-0p-Ipd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHN-9s-Ft4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2013.5999999999999" y="105.69715142428787"/>
         </scene>
@@ -434,6 +431,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nQg-Rm-Gen"/>
+        <segue reference="JH9-0h-TVN"/>
     </inferredMetricsTieBreakers>
 </document>

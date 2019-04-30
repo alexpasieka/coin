@@ -11,11 +11,6 @@ import UIKit
 // custom past month list table view controller class
 class PastMonthsVC: UITableViewController {
     
-    // TODO - is this necessary?
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
-    
     // MARK: - Table View Data Source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,6 +27,7 @@ class PastMonthsVC: UITableViewController {
         // for each past month
         let month = MyAppData.shared.pastMonths[indexPath.row]
         cell.textLabel?.text = month.name
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

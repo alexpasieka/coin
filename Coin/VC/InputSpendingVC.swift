@@ -48,10 +48,16 @@ class InputSpendingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // reset checkmark
+        for cell in tableView.visibleCells {
+            cell.accessoryType = .none
+        }
+        
         if let indexPath = tableView.indexPathForSelectedRow {
             // return the selected category cell
-            let currentCell = tableView.cellForRow(at: indexPath)! as UITableViewCell
-            category = currentCell.textLabel!.text
+            let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
+            cell.accessoryType = .checkmark
+            category = cell.textLabel!.text
         }
     }
     

@@ -56,6 +56,12 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         moneyLeftToSpendLabel.text = String(format: "$%.2f", moneyLeftToSpend)
         moneySpentLabel.text = String(format: "$%.2f", moneySpent)
         
+        // if the user has over spent
+        if moneyLeftToSpend < 0.00 {
+            moneyLeftToSpendLabel.text = String(format: "-$%.2f", abs(moneyLeftToSpend))
+            moneyLeftToSpendLabel.textColor = UIColor.red
+        }
+        
         // load category list data
         categoryList.dataSource = self
         categoryList.delegate = self
