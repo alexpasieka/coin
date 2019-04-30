@@ -12,9 +12,9 @@ class PastMonthReportVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     var month: Month!
     
-    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var budgetResultLabel: UILabel!
     @IBOutlet weak var categoryList: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     var moneySpent : Float = 0.00
     var moneyLeftToSpend : Float = 0.00
@@ -22,7 +22,7 @@ class PastMonthReportVC: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        monthLabel.text = month.name
+        navigationBar.title = month.name
         
         for c in month.report {
             moneyLeftToSpend += c.moneyLeftToSpend
